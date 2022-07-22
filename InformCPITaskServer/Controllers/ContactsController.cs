@@ -45,7 +45,12 @@ namespace InformCPITaskServer.Controllers
             _informCPITaskDbContext.Contacts.Update(contact);
             Ok(await _informCPITaskDbContext.SaveChangesAsync());
         }
-
+        [HttpDelete]
+        async public Task DeleteContact([FromBody] Contact contact)
+        {
+            _informCPITaskDbContext.Contacts.Remove(contact);
+            Ok(await _informCPITaskDbContext.SaveChangesAsync());
+        }
 
     }
 }

@@ -24,5 +24,19 @@ namespace InformCPITaskServer.Controllers
         {
             return Ok(await _informCPITaskDbContext.Contacts.Where(contact => contact.UserId == userId).ToListAsync());
         }
+
+        [HttpPost]
+        async public Task addNewContact([FromBody]Contact contact)
+        {
+            var newContact = new Contact
+            {
+                UserId = contact.UserId,
+                ContactName = contact.ContactName,
+                Email = contact.Email,
+                PhoneNumber = contact.PhoneNumber
+            };
+            await _informCPITaskDbContext.Contacts.AddAsync(newContact);
+            Ok(_informCPITaskDbContext.SaveChanges());
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace InformCPITaskServer.Controllers
         }
 
         [HttpPost]
-        async public Task addNewContact([FromBody]Contact contact)
+        async public Task AddNewContact([FromBody]Contact contact)
         {
             var newContact = new Contact
             {
@@ -38,5 +38,14 @@ namespace InformCPITaskServer.Controllers
             await _informCPITaskDbContext.Contacts.AddAsync(newContact);
             Ok(_informCPITaskDbContext.SaveChanges());
         }
+
+        [HttpPut]
+        async public Task UpdateContact([FromBody] Contact contact)
+        {
+            _informCPITaskDbContext.Contacts.Update(contact);
+            Ok(await _informCPITaskDbContext.SaveChangesAsync());
+        }
+
+
     }
 }

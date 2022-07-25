@@ -19,7 +19,7 @@ namespace InformCPITaskServer.Controllers
             _informCPITaskDbContext = informCPITaskDbContext;
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet("")]
         async public Task<ActionResult<IEnumerable<Contact>>> GetContactsForUser(int userId)
         {
             try 

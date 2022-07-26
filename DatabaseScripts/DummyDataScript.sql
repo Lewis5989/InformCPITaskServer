@@ -8,7 +8,7 @@ VALUES ('John Ironside', 'johns@email.com','Password'),
 
 INSERT INTO Contacts(UserID,ContactName, EMail, PhoneNumber)
 VALUES ( null, null,'07708756565'),
-('Hannah Ironside', 'Hannah@email.com','07708756501'),
-('John Smith', 'john@email.com','07708756502'),
-('Ian Hancock', null,'07708756503'),
-('Nick','Nicks@email.com',null);
+(1,'Hannah Ironside', 'Hannah@email.com','07708756501'),
+(1,'John Smith', 'john@email.com','07708756502'),
+(1,'Ian Hancock', null,'07708756503'),
+(1,'Nick','Nicks@email.com',null);
